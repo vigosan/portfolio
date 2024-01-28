@@ -27,13 +27,12 @@ export default function Layout({
   return (
     <html lang="en">
       <body className={GeistSans.className}>
-        <main className="min-h-screen">
+        <main className="min-h-screen dark:bg-slate-950 dark:text-white">
           <div className="max-w-full px-8 py-14 lg:mx-auto lg:max-w-2xl lg:px-0">
             <Navbar className="flex gap-4 pb-14" />
             {children}
           </div>
         </main>
-        <footer>vicent.io</footer>
       </body>
     </html>
   );
