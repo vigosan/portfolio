@@ -28,11 +28,12 @@ export default function Layout({
     <html lang="en">
       <body className={GeistSans.className}>
         <main className="min-h-screen">
-          <div className="mx-auto max-w-2xl py-14">
+          <div className="max-w-full px-8 py-14 lg:mx-auto lg:max-w-2xl lg:px-0">
             <Navbar className="flex gap-4 pb-14" />
             {children}
           </div>
         </main>
+        <footer>vicent.io</footer>
       </body>
     </html>
   );
