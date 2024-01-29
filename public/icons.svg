@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0">
+  <symbol id="fly" viewBox="0 0 34 46" fill="none" aria-hidden="true">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M32.6528 4.18888L29.5202 4.18406C26.1348 4.18004 24.201 5.85607 23.5888 9.59378L23.2901 11.4783H29.744L29.0601 15.7764H22.6146L19.094 36.5998C18.1371 42.5829 14.0618 46.0076 7.94075 46L7.58853 45.9976L8.30304 41.4588L8.53168 41.4568C11.9774 41.4608 13.8299 40.0013 14.4386 36.2825L16.7237 22.7829H0L0.686334 18.4844H6.5401H17.4513L17.9097 15.7764H1.20703L1.89337 11.4783H18.5856L18.9108 9.42144C19.8669 3.43884 23.8778 -0.00721983 29.9654 1.13576e-05H33.3097L32.6528 4.18888Z" fill="currentColor"/>
+  </symbol>
+
+  <symbol id="rss" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M4 11a9 9 0 0 1 9 9"/>
+    <path d="M4 4a16 16 0 0 1 16 16"/>
+    <circle cx="5" cy="19" r="1"/>
+  </symbol>
+
+  <symbol id="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"/>
+    <path d="M12 2v2"/>
+    <path d="M12 20v2"/>
+    <path d="m4.93 4.93 1.41 1.41"/>
+    <path d="m17.66 17.66 1.41 1.41"/>
+    <path d="M2 12h2"/>
+    <path d="M20 12h2"/>
+    <path d="m6.34 17.66-1.41 1.41"/>
+    <path d="m19.07 4.93-1.41 1.41"/>
+  </symbol>
+</svg>

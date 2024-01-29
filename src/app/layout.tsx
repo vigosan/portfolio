@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
+import Navbar from './ui/Navbar';
 import { GeistSans } from 'geist/font/sans';
-import { Navbar } from './ui/Navbar';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -29,7 +29,7 @@ export default function Layout({
       <body className={GeistSans.className}>
         <main className="min-h-screen dark:bg-slate-950 dark:text-white">
           <div className="max-w-full px-8 py-14 lg:mx-auto lg:max-w-2xl lg:px-0">
-            <Navbar className="flex gap-4 pb-14" />
+            <Navbar className="pb-14" />
             {children}
           </div>
         </main>

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Icon from './ui/Icon';
 
 export default function Home() {
   return (
@@ -11,17 +12,12 @@ export default function Home() {
         frontend. I currently work at{' '}
         <a
           href="http://flywire.com"
-          className="group inline-flex items-center align-middle"
+          className="group inline-flex items-center gap-1 align-middle"
         >
-          <Image
-            alt="Flywire icon"
-            aria-hidden
-            className="h-auto w-4"
-            src="/fly.svg"
-            height={16}
-            width={16}
-          />
-          <span>Flywire</span>
+          <Icon name="fly" className="h-6 w-6" />
+          <span className="group-hover:underline group-hover:decoration-blue-500 group-hover:decoration-wavy">
+            Flywire
+          </span>
         </a>
         , contributing to several projects built in React. Follow my journey as
         I continue to explore the realms of code and innovation!
