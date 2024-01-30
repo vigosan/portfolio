@@ -40,7 +40,11 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   checked: boolean;
 }
 
-function DarkModeSwitch({ checked = false, onSwitch, ...rest }: Props) {
+export default function DarkModeSwitch({
+  checked = false,
+  onSwitch,
+  ...rest
+}: Props) {
   const id = useId();
   const { circle, svg, lines, mask } = properties[checked ? 'dark' : 'light'];
 
@@ -60,9 +64,9 @@ function DarkModeSwitch({ checked = false, onSwitch, ...rest }: Props) {
 
   return (
     <button
+      {...rest}
       onClick={() => onSwitch(!checked)}
       aria-label={checked ? 'Activate light mode' : 'Activate dark mode'}
-      {...rest}
     >
       <animated.svg
         viewBox="0 0 24 24"
@@ -105,5 +109,3 @@ function DarkModeSwitch({ checked = false, onSwitch, ...rest }: Props) {
     </button>
   );
 }
-
-export default DarkModeSwitch;
