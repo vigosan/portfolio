@@ -13,9 +13,10 @@ export default function Home() {
         <a
           href="http://flywire.com"
           className="group inline-flex items-center gap-1 align-middle"
+          title="Flywire"
         >
           <Icon name="fly" className="h-6 w-6" />
-          <span className="group-hover:underline group-hover:decoration-blue-500 group-hover:decoration-wavy">
+          <span className="group-hover:underline group-hover:decoration-blue-500 group-hover:decoration-wavy dark:group-hover:decoration-slate-500">
             Flywire
           </span>
         </a>
