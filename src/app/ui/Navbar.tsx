@@ -49,7 +49,7 @@ export default function Navbar({ className }: { className?: string }) {
           <DarkModeSwitch
             className="h-6 w-6"
             checked={isDarkMode}
-            onChange={setDarkMode}
+            onSwitch={setDarkMode}
           />
         </li>
         <li>

@@ -1,4 +1,4 @@
-import React, { useId } from 'react';
+import React, { useId, ButtonHTMLAttributes } from 'react';
 import { useSpring, animated } from '@react-spring/web';
 
 export const properties = {
@@ -35,19 +35,12 @@ export const properties = {
   springConfig: { mass: 4, tension: 250, friction: 35 },
 };
 
-type SVGProps = Omit<React.HTMLAttributes<HTMLOrSVGElement>, 'onChange'>;
-
-interface Props extends SVGProps {
-  onChange: (checked: boolean) => void;
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  onSwitch: (checked: boolean) => void;
   checked: boolean;
 }
 
-const DarkModeSwitch: React.FC<Props> = ({
-  checked = false,
-  children,
-  onChange,
-  ...rest
-}) => {
+function DarkModeSwitch({ checked = false, onSwitch, ...rest }: Props) {
   const id = useId();
   const { circle, svg, lines, mask } = properties[checked ? 'dark' : 'light'];
 
@@ -55,26 +48,21 @@ const DarkModeSwitch: React.FC<Props> = ({
     ...svg,
     config: properties.springConfig,
   });
-
   const centerCircleProps = useSpring({
     ...circle,
     config: properties.springConfig,
   });
-
   const maskedCircleProps = useSpring({
     ...mask,
     config: properties.springConfig,
   });
-
-  const linesProps = useSpring({
-    ...lines,
-    config: properties.springConfig,
-  });
+  const linesProps = useSpring({ ...lines, config: properties.springConfig });
 
   return (
     <button
-      onClick={() => onChange(!checked)}
+      onClick={() => onSwitch(!checked)}
       aria-label={checked ? 'Activate light mode' : 'Activate dark mode'}
+      {...rest}
     >
       <animated.svg
         viewBox="0 0 24 24"
@@ -85,26 +73,24 @@ const DarkModeSwitch: React.FC<Props> = ({
         strokeLinejoin="round"
         stroke="currentColor"
         style={svgContainerProps}
-        {...rest}
       >
         <mask id={`moon-${id}`}>
-          <rect x="0" y="0" width="100%" height="100%" fill="white" />
+          <rect width="100%" height="100%" fill="white" />
           <animated.circle
-            style={maskedCircleProps}
+            cx={maskedCircleProps.cx}
+            cy={maskedCircleProps.cy}
             r="9"
             fill="black"
             strokeWidth="0"
           />
         </mask>
-
         <animated.circle
           cx="12"
           cy="12"
           fill="currentColor"
           mask={`url(#moon-${id})`}
-          style={centerCircleProps}
+          r={centerCircleProps.r}
         />
-
         <animated.g style={linesProps}>
           <line x1="12" y1="1" x2="12" y2="3" />
           <line x1="12" y1="21" x2="12" y2="23" />
@@ -118,6 +104,6 @@ const DarkModeSwitch: React.FC<Props> = ({
       </animated.svg>
     </button>
   );
-};
+}
 
 export default DarkModeSwitch;
