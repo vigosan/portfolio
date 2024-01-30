@@ -1,3 +1,5 @@
-export default function cn(arr: (string | undefined)[] = []) {
-  return arr.filter(Boolean).join(' ')
+import clsx from 'clsx';
+
+export default function cn(...strs: (string | undefined | null)[]) {
+  return clsx(strs);
 }
