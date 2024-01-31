@@ -1,5 +1,6 @@
 'use client';
-import { createContext, useState, FC, ReactNode } from 'react';
+import { useEffect, createContext, useState, FC, ReactNode } from 'react';
+import useLocalStorage from '../hooks/useLocalStorage/useLocalStorage';
 
 export enum Theme {
   LIGHT = 'light',
@@ -15,12 +16,28 @@ interface ThemeProviderProps {
 }
 
 const ThemeProvider: FC<ThemeProviderProps> = ({ children }) => {
-  const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
+  const [theme, setTheme] = useLocalStorage<Theme>('theme', Theme.LIGHT);
+  const [isThemeLoaded, setIsThemeLoaded] = useState(false);
   const toggleTheme = () => {
-    setTheme(prevTheme =>
+    setTheme((prevTheme: Theme) =>
       prevTheme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT,
     );
   };
+
+  useEffect(() => {
+    setIsThemeLoaded(true);
+    if (typeof window !== 'undefined') {
+      if (theme === Theme.DARK) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    }
+  }, [theme]);
+
+  if (!isThemeLoaded) {
+    return null;
+  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
