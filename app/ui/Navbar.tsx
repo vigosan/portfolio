@@ -57,13 +57,13 @@ export default function Navbar({ className }: { className?: string }) {
           />
         </li>
         <li>
-          <a href="http://github.com/vigosan/portfolio" title="Source code">
-            <Icon name="github" className="h-6 w-6" />
+          <a href="" title="RSS link">
+            <Icon name="rss" className="h-6 w-6" />
           </a>
         </li>
         <li>
-          <a href="" title="RSS link">
-            <Icon name="rss" className="h-6 w-6" />
+          <a href="http://github.com/vigosan/portfolio" title="Source code">
+            <Icon name="github" className="h-6 w-6" />
           </a>
         </li>
       </ol>
