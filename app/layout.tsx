@@ -8,6 +8,11 @@ import './globals.css';
 export const metadata: Metadata = {
   title: 'Vicent Gozalbes',
   description: 'Developer, biker, and dj.',
+  alternates: {
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
+  },
   robots: {
     index: true,
     follow: true,

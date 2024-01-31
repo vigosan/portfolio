@@ -52,7 +52,7 @@ export default function Navbar({ className }: { className?: string }) {
           />
         </li>
         <li>
-          <a href="" title="RSS link">
+          <a href="/feed.xml" title="RSS link">
             <Icon name="rss" className="h-6 w-6" />
           </a>
         </li>
