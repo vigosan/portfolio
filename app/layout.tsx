@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Navbar from './ui/Navbar';
+import Footer from './ui/Footer';
 import { GeistSans } from 'geist/font/sans';
 import ThemeProvider from './context/ThemeContext';
 import './globals.css';
@@ -29,12 +30,13 @@ export default function Layout({
     <html lang="en">
       <body className={GeistSans.className}>
         <ThemeProvider>
-          <main className="min-h-screen bg-white text-slate-950 transition-all dark:bg-gray-950 dark:text-white">
-            <div className="max-w-full px-8 py-14 lg:mx-auto lg:max-w-2xl lg:px-0">
+          <div className="flex min-h-screen bg-white text-slate-950 transition-all dark:bg-gray-950 dark:text-white">
+            <div className="flex max-w-full flex-1 flex-col px-8 py-14 lg:mx-auto lg:max-w-2xl lg:px-0">
               <Navbar className="pb-14" />
-              {children}
+              <main className="flex-1">{children}</main>
+              <Footer />
             </div>
-          </main>
+          </div>
         </ThemeProvider>
       </body>
     </html>
