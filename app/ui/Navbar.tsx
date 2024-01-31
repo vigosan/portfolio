@@ -2,9 +2,11 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import DarkModeSwitch from './DarkModeSwitch';
 import Icon from './Icon';
 import cn from '../utils/cn';
-import DarkModeSwitch from './DarkModeSwitch';
+import { useTheme } from '../hooks/useTheme';
+import { Theme } from '../context/ThemeContext';
 
 const navItems = [
   {
@@ -23,7 +25,9 @@ const navItems = [
 
 export default function Navbar({ className }: { className?: string }) {
   const pathname = usePathname();
-  const [isDarkMode, setDarkMode] = useState(false);
+  const { theme, toggleTheme } = useTheme();
+
+  console.log(theme);
 
   return (
     <nav className={cn('flex justify-between', className)}>
@@ -48,8 +52,8 @@ export default function Navbar({ className }: { className?: string }) {
         <li>
           <DarkModeSwitch
             className="h-6 w-6"
-            checked={isDarkMode}
-            onSwitch={setDarkMode}
+            checked={theme === Theme.DARK}
+            onSwitch={toggleTheme}
           />
         </li>
         <li>

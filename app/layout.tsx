@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Navbar from './ui/Navbar';
 import { GeistSans } from 'geist/font/sans';
+import ThemeProvider from './context/ThemeContext';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -27,12 +28,14 @@ export default function Layout({
   return (
     <html lang="en">
       <body className={GeistSans.className}>
-        <main className="min-h-screen bg-white text-slate-950 dark:bg-gray-950 dark:text-white">
-          <div className="max-w-full px-8 py-14 lg:mx-auto lg:max-w-2xl lg:px-0">
-            <Navbar className="pb-14" />
-            {children}
-          </div>
-        </main>
+        <ThemeProvider>
+          <main className="min-h-screen bg-white text-slate-950 dark:bg-gray-950 dark:text-white">
+            <div className="max-w-full px-8 py-14 lg:mx-auto lg:max-w-2xl lg:px-0">
+              <Navbar className="pb-14" />
+              {children}
+            </div>
+          </main>
+        </ThemeProvider>
       </body>
     </html>
   );
