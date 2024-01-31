@@ -27,11 +27,9 @@ export default function Navbar({ className }: { className?: string }) {
   const pathname = usePathname();
   const { theme, toggleTheme } = useTheme();
 
-  console.log(theme);
-
   return (
     <nav className={cn('flex justify-between', className)}>
-      <ol className="flex gap-4">
+      <ol className="flex items-center gap-4">
         {navItems.map(item => (
           <li key={item.name}>
             <Link
@@ -48,10 +46,11 @@ export default function Navbar({ className }: { className?: string }) {
           </li>
         ))}
       </ol>
-      <ol className="flex flex-row gap-8">
+
+      <ol className="flex items-center gap-8">
         <li>
           <DarkModeSwitch
-            className="h-6 w-6"
+            className="block h-6 w-6"
             checked={theme === Theme.DARK}
             onSwitch={toggleTheme}
           />
