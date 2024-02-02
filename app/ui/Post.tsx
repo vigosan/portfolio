@@ -72,11 +72,15 @@ Post.Excerpt = function Excerpt({
   return <Element className={className}>{children}</Element>;
 };
 
+type ContentProps = Omit<Props, 'children'> & {
+  children: string;
+};
+
 Post.Content = async function Excerpt({
   as: Element = 'div',
   children,
   className,
-}: Props) {
+}: ContentProps) {
   const html = await markdownToHtml(children || '');
 
   return (
