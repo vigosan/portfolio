@@ -1,4 +1,5 @@
-import { getPostBySlug } from '../../../lib/api';
+import { Metadata } from 'next';
+import { getAllPosts, getPostBySlug } from '../../../lib/api';
 import Post from '../../ui/Post';
 
 export default function Page({ params }: { params: { slug: string } }) {
@@ -23,11 +24,33 @@ export default function Page({ params }: { params: { slug: string } }) {
           <Post.Title className="mt-8 text-2xl font-medium tracking-tighter hover:underline hover:decoration-blue-500 hover:decoration-wavy dark:decoration-slate-400 dark:hover:decoration-slate-500/50">
             {post.title}
           </Post.Title>
-          <Post.Content className="mt-4 leading-6 space-y-4">
+          <Post.Content className="mt-4 space-y-4 leading-6">
             {post.content}
           </Post.Content>
         </Post.Body>
       </Post>
     </div>
   );
+}
+
+export function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Metadata {
+  const post = getPostBySlug(params.slug);
+
+  return {
+    openGraph: {
+      title: post.title,
+    },
+  };
+}
+
+export async function generateStaticParams() {
+  const posts = getAllPosts();
+
+  return posts.map(post => ({
+    slug: post.slug,
+  }));
 }
