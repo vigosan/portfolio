@@ -15,6 +15,7 @@
 
 # production
 /build
+/public/feed.xml
 
 # misc
 .DS_Store
