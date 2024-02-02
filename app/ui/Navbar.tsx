@@ -32,7 +32,11 @@ export default function Navbar({ className }: { className?: string }) {
               href={item.href}
               className={cn(
                 'hover:underline hover:decoration-blue-500 hover:decoration-wavy dark:decoration-slate-400 dark:hover:decoration-slate-500/50',
-                pathname === item.href
+                (
+                  item.href === '/'
+                    ? pathname === item.href
+                    : pathname.includes(item.href)
+                )
                   ? 'underline decoration-blue-500 decoration-wavy dark:decoration-slate-500/50'
                   : null,
               )}

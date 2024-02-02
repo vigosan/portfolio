@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import cn from '../utils/cn';
+import dateFormatter from '../utils/dateFormatter';
+import markdownToHtml from '../../lib/markdownToHtml';
 
 type Props = {
   as?: React.ElementType;
@@ -32,14 +34,7 @@ Post.Datetime = function Datetime({
   children,
   className,
 }: DatetimeProps) {
-  const date = new Date(children);
-  const options: Intl.DateTimeFormatOptions = {
-    weekday: 'short',
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-  };
-  const formattedDate = new Intl.DateTimeFormat('en-US', options).format(date);
+  const formattedDate = dateFormatter(children);
 
   return (
     <Element dateTime={children} className={className}>
@@ -77,16 +72,32 @@ Post.Excerpt = function Excerpt({
   return <Element className={className}>{children}</Element>;
 };
 
-Post.Body = function Body({ as: Element = 'p', children, className }: Props) {
+Post.Content = async function Excerpt({
+  as: Element = 'div',
+  children,
+  className,
+}: Props) {
+  const html = await markdownToHtml(children || '');
+
+  return (
+    <Element className={className} dangerouslySetInnerHTML={{ __html: html }} />
+  );
+};
+
+Post.Body = function Body({ as: Element = 'div', children, className }: Props) {
   return <Element className={className}>{children}</Element>;
 };
 
-type LinkProps = Omit<Props, 'className'> & {
+type LinkProps = Props & {
   href: string;
 };
 
-Post.Link = function PostLink({ children, href }: LinkProps) {
-  return <Link href={href}>{children}</Link>;
+Post.Link = function PostLink({ children, className, href }: LinkProps) {
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
 };
 
 export default Post;

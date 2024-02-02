@@ -35,7 +35,7 @@ export default function Layout({
     <html lang="en">
       <body className={GeistSans.className}>
         <ThemeProvider>
-          <div className="flex min-h-screen bg-white text-slate-950 transition-all dark:bg-gray-950 dark:text-white">
+          <div className="flex min-h-screen bg-white text-gray-900 transition-all dark:bg-gray-900 dark:text-white">
             <div className="flex max-w-full flex-1 flex-col px-8 py-14 lg:mx-auto lg:max-w-2xl lg:px-0">
               <Navbar className="pb-14" />
               <main className="flex-1">{children}</main>
