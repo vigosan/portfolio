@@ -1,5 +1,5 @@
 import { getAllPosts } from '../../lib/api';
-import Post from '../ui/Post';
+import Post from '../../ui/Post';
 
 export default function Page() {
   const posts = getAllPosts();

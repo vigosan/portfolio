@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import Icon from './ui/Icon';
+import Icon from '../ui/Icon';
 
 export default function Home() {
   return (

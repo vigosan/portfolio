@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import type { Metadata } from 'next';
-import Navbar from './ui/Navbar';
-import Footer from './ui/Footer';
-import Analytics from './ui/Analytics';
+import Navbar from '../ui/Navbar';
+import Footer from '../ui/Footer';
+import Analytics from '../ui/Analytics';
 import { GeistSans } from 'geist/font/sans';
-import ThemeProvider from './context/ThemeContext';
+import ThemeProvider from '../context/ThemeContext';
 import './globals.css';
 
 export const metadata: Metadata = {

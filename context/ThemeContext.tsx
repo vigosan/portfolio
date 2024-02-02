@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, createContext, useState, FC, ReactNode } from 'react';
-import useLocalStorage from '../hooks/useLocalStorage/useLocalStorage';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 export enum Theme {
   LIGHT = 'light',

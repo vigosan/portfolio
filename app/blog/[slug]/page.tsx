@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { getAllPosts, getPostBySlug } from '../../../lib/api';
-import Post from '../../ui/Post';
+import Post from '../../../ui/Post';
 
 export default function Page({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug);

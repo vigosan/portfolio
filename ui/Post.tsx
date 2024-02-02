@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import cn from '../utils/cn';
 import dateFormatter from '../utils/dateFormatter';
-import markdownToHtml from '../../lib/markdownToHtml';
+import markdownToHtml from '../lib/markdownToHtml';
 
 type Props = {
   as?: React.ElementType;
