@@ -3,7 +3,7 @@ title: 'Building a Custom React Hook for Scroll Detection'
 slug: 'custom-scroll-detection-react'
 excerpt: "Let's get to work on a custom React Hook for detecting scrolling."
 category: 'react'
-date: '2024-02-05'
+datetime: '2024-02-05'
 ---
 
 # Building a Custom React Hook for Scroll Detection
