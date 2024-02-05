@@ -6,8 +6,6 @@ category: 'react'
 datetime: '2024-02-05'
 ---
 
-# Building a Custom React Hook for Scroll Detection
-
 Recently, we faced a feature request for a project, we needed to display a
 scroll icon when a fixed-height div element had scrollable content and hide the
 icon when there was no scrollable content. Moreover, the content within the div
