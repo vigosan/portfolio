@@ -36,9 +36,7 @@ export default function Layout({
   return (
     <html lang="en">
       <body className={GeistSans.className}>
-        <Suspense>
-          <Analytics />
-        </Suspense>
+        <Analytics gaId="G-11197KZXNE" />
         <ThemeProvider>
           <div className="flex min-h-screen bg-white text-gray-900 transition-all dark:bg-gray-900 dark:text-white">
             <div className="flex max-w-full flex-1 flex-col px-8 py-14 lg:mx-auto lg:max-w-2xl lg:px-0">
