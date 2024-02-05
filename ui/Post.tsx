@@ -84,7 +84,10 @@ Post.Content = async function Excerpt({
   const html = await markdownToHtml(children || '');
 
   return (
-    <Element className={cn('prose dark:prose-invert prose-h2:text-xl', className)} dangerouslySetInnerHTML={{ __html: html }} />
+    <Element
+      className={cn('prose dark:prose-invert prose-h2:text-xl', className)}
+      dangerouslySetInnerHTML={{ __html: html }}
+    />
   );
 };
 
