@@ -12,14 +12,14 @@ export default function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="space-y-16">
       <Post key={post.slug}>
-        <Post.Header className="text-xs">
+        <Post.Metadata className="text-xs">
           <Post.Datetime className="text-gray font-normal">
             {post.datetime}
           </Post.Datetime>
           <Post.Category className="rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100 dark:bg-gray-900 dark:text-white dark:hover:bg-gray-800">
             {post.category}
           </Post.Category>
-        </Post.Header>
+        </Post.Metadata>
         <Post.Body>
           <Post.Title className="mt-8 text-2xl font-medium tracking-tighter hover:underline hover:decoration-blue-500 hover:decoration-wavy dark:decoration-slate-400 dark:hover:decoration-slate-500/50">
             {post.title}

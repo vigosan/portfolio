@@ -1,8 +1,6 @@
 ---
 title: 'Hello world'
 slug: 'hello-world'
-excerpt: "Hey folks! Welcome to my very first blog post! As a frontend developer, I face a lot of exciting challenges every day, and I thought it'd be fun to start sharing
-these."
 category: 'me'
 datetime: '2024-02-01'
 ogImage:

@@ -17,7 +17,7 @@ type DatetimeProps = Omit<Props, 'children'> & {
   children: string;
 };
 
-Post.Header = function Body({
+Post.Metadata = function Body({
   as: Element = 'div',
   children,
   className,
@@ -62,14 +62,6 @@ Post.Title = function Title({
       {children}
     </Element>
   );
-};
-
-Post.Excerpt = function Excerpt({
-  as: Element = 'p',
-  children,
-  className,
-}: Props) {
-  return <Element className={className}>{children}</Element>;
 };
 
 type ContentProps = Omit<Props, 'children'> & {
